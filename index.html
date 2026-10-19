@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects by Alex Martin</title>
+<meta name="description" content="Web apps by Alex Martin: a multi-currency budget dashboard and a long-term travel planner, each with a live demo.">
+<meta property="og:title" content="Projects by Alex Martin">
+<meta property="og:description" content="A multi-currency budget dashboard and a long-term travel planner, each with a live demo.">
+<meta property="og:image" content="https://tayloramartin220.github.io/preview.jpg">
+<meta property="og:url" content="https://tayloramartin220.github.io/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;800&display=swap">
+<style>
+  :root {
+    color-scheme: light;
+    --lichen: #EDF1EE;
+    --basalt: #1F2629;
+    --slate: #5B676A;
+    --spring: #0E7A76;
+    --spring-ink: #0B615E;
+    --sulfur: #D9B23A;
+    --rule: #CDD6D2;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      color-scheme: dark;
+      --lichen: #161C1E;
+      --basalt: #E8EEEB;
+      --slate: #9AA8A6;
+      --spring: #2BA39C;
+      --spring-ink: #5CC7BF;
+      --sulfur: #E6C25A;
+      --rule: #2C3739;
+    }
+  }
+
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--lichen);
+    color: var(--basalt);
+    font-family: "Schibsted Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
+    font-size: 18px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; }
+  a:focus-visible { outline: 3px solid var(--sulfur); outline-offset: 3px; border-radius: 2px; }
+
+  .wrap { max-width: 1280px; margin: 0 auto; padding: 0 24px; }
+
+  /* Intro */
+  header.intro {
+    display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 28px;
+    padding: 36px 0 28px;
+  }
+  .intro h1 {
+    font-size: clamp(28px, 3.2vw, 36px);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin: 0;
+  }
+  .intro p {
+    flex: 1 1 360px;
+    font-size: 17px;
+    line-height: 1.45;
+    color: var(--slate);
+    max-width: 62ch;
+    margin: 0;
+  }
+  .intro .profile {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--spring-ink);
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 4px;
+  }
+  .intro .profile:hover { text-decoration-thickness: 3px; }
+
+  /* Projects */
+  main { padding-bottom: 40px; }
+  .project {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 52px;
+    align-items: center;
+    padding: 52px 0;
+    border-top: 1px solid var(--rule);
+  }
+  .project:nth-of-type(even) { grid-template-columns: 1fr 2fr; }
+  .project:nth-of-type(even) .shot { order: 2; }
+
+  .shot {
+    position: relative;
+    display: block;
+    margin: 0 18px 18px 0;
+  }
+  .shot::before {
+    content: "";
+    position: absolute;
+    inset: 18px -18px -18px 18px;
+    background: var(--spring);
+    border-radius: 6px;
+  }
+  .shot img {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    border: 1px solid var(--rule);
+    background: #fff;
+  }
+
+  .about h2 {
+    font-size: clamp(30px, 3.2vw, 40px);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+    margin: 0 0 16px;
+  }
+  .about .what { margin: 0 0 22px; max-width: 42ch; }
+  .about ul {
+    list-style: none;
+    margin: 0 0 30px;
+    padding: 0;
+    color: var(--slate);
+    font-size: 17px;
+  }
+  .about li {
+    padding: 9px 0;
+    border-top: 1px solid var(--rule);
+  }
+  .about li:last-child { border-bottom: 1px solid var(--rule); }
+
+  .links { display: flex; flex-wrap: wrap; gap: 14px 22px; align-items: center; }
+  .demo {
+    display: inline-block;
+    background: var(--spring);
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 999px;
+  }
+  .demo:hover { background: var(--spring-ink); }
+  @media (prefers-color-scheme: dark) { .demo { color: #0C1213; } .demo:hover { background: var(--spring-ink); } }
+  .code {
+    font-weight: 600;
+    color: var(--basalt);
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 4px;
+  }
+  .code:hover { text-decoration-thickness: 3px; }
+
+  footer {
+    border-top: 1px solid var(--rule);
+    padding: 32px 0 56px;
+    color: var(--slate);
+    font-size: 15px;
+  }
+
+  @media (max-width: 820px) {
+    header.intro { padding: 28px 0 20px; }
+    .project, .project:nth-of-type(even) { grid-template-columns: 1fr; gap: 36px; padding: 52px 0; }
+    .project:nth-of-type(even) .shot { order: 0; }
+    .shot { margin: 0 12px 12px 0; }
+    .shot::before { inset: 12px -12px -12px 12px; }
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="intro">
+      <h1>Alex Martin</h1>
+      <p>Web apps I've built for budgeting and long-term travel planning. Each one runs in the browser, with a live demo you can try.</p>
+      <a class="profile" href="https://github.com/tayloramartin220">GitHub profile</a>
+    </header>
+
+    <main>
+      <article class="project">
+        <a class="shot" href="https://tayloramartin220.github.io/Budget-App/" aria-label="Open the Budget App demo">
+          <img src="budget-app.jpg" width="1400" height="868" alt="Budget App dashboard showing net worth by category, investment holdings, savings goal rings and debt payoff rings">
+        </a>
+        <div class="about">
+          <h2>Budget App</h2>
+          <p class="what">A personal finance dashboard for spending, net worth, investments, debt and savings goals, in as many currencies as you hold money in.</p>
+          <ul>
+            <li>Every account, debt and goal keeps its own currency, with totals in the one you choose</li>
+            <li>Debt payoff and savings projections, with and without extra payments</li>
+            <li>Bank imports from Excel or CSV, with data stored only on your device</li>
+          </ul>
+          <div class="links">
+            <a class="demo" href="https://tayloramartin220.github.io/Budget-App/">Open live demo</a>
+            <a class="code" href="https://github.com/tayloramartin220/Budget-App">Project page on GitHub</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project">
+        <a class="shot" href="https://tayloramartin220.github.io/Nomad-Notes/" aria-label="Open the Nomad Notes demo">
+          <img src="nomad-notes.jpg" width="1400" height="868" alt="Nomad Notes overview showing the current trip, remaining budget, projected leftover, budget runway and items that need attention">
+        </a>
+        <div class="about">
+          <h2>Nomad Notes</h2>
+          <p class="what">A travel planner for long trips: flights, stays, budget, entry rules and stay limits in one place.</p>
+          <ul>
+            <li>Keeps what you've paid, committed to and only estimated separate</li>
+            <li>Tracks stay limits for any passport, including rolling 90-in-180 rules</li>
+            <li>Flags refund deadlines and nights with nowhere booked</li>
+          </ul>
+          <div class="links">
+            <a class="demo" href="https://tayloramartin220.github.io/Nomad-Notes/">Open live demo</a>
+            <a class="code" href="https://github.com/tayloramartin220/Nomad-Notes">Project page on GitHub</a>
+          </div>
+        </div>
+      </article>
+    </main>
+
+    <footer>
+      © 2026 Alex Martin. All rights reserved.
+    </footer>
+  </div>
+</body>
+</html>
